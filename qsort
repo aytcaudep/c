@@ -1,0 +1,26 @@
+void qsort(vector<long long>& arr, long long L, long long R) {
+	if (R - L <= 1) {
+		return;
+	}
+	long long mid = arr[L + rand() % (R - L - 1)];
+
+	long long x = L, y = L;
+	for (long long i = L; i < R; i++) {
+		if (arr[i] < mid) {
+			swap(arr[i], arr[x]);
+
+			if (x != y) {
+				swap(arr[i], arr[y]);
+			}
+
+			x++;
+			y++;
+		}
+		else if (arr[i] == mid) {
+			swap(arr[i], arr[y]);
+			y++;
+		}
+	}
+	qsort(arr, L, x);
+	qsort(arr, y, R);
+}

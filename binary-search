@@ -1,0 +1,12 @@
+long long binSearch(vector<long long>&arr, long long L, long long R, long long x) {
+	while (R - L > 1) {
+		int mid = (R + L) / 2;
+		if (arr[mid] < x) {
+			L = mid;
+		}
+		else {
+			R = mid;
+		}
+	}
+	return R;
+}

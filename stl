@@ -1,3 +1,7 @@
+void output(int& value) {cout << value << " ";}
+
+bool is_positive(int& value) {return(value > 0 ? true : false);}
+
 //STL (#include <algorithm>)
 
     vector<int> vec = { -2, 9, 4, 7 };
